@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block nav  %}
+<ul>
+  {% for product in proList %}
+  {%load staticfiles%}
+</br>
+<br />
+
+  <div class="square">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+          <img src="{{product.image.url}}" alt="...">
+        <div class="caption">
+
+          <h2>{{ product.pname }}</h2>
+          <br />
+          <h4>"{{product.price}}"  Rs</h4>
+          <h6>{{product.mrp}}</h6>
+          <p>
+            only {{product.quantity}} left
+          </p>
+          <p><a href="{% url 'addcart' product.product_id %}" class="btn btn-primary  icon-shopping-cart" role="button">add to cart</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </button>
+
+</div>
+
+  {% endfor %}
+
+<script>
+  .square {
+      background: #000;
+      width: 50vw;
+      height: 50vw;
+  }
+  .square h1 {
+      color: #fff;
+  }
+</script>
+{% endblock  %}

@@ -1,0 +1,230 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block tittle %}Product {%endblock tittle %}</title>
+  {% load staticfiles %}
+
+
+  <!-- for-mobile-apps -->
+
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+  		function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--//for-mobile-apps -->
+  <!--Custom Theme files -->
+  <link href="{%static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{%static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+  <!--//Custom Theme files -->
+  <!--js-->
+  <script src="{%static 'js/jquery-1.11.1.min.js' %}"></script>
+  <script src="{%static 'js/modernizr.custom.js' %}"></script>
+  <!--//js-->
+  <!--cart-->
+  <script src="{%static 'js/simpleCart.min.js' %}"></script>
+  <!--cart-->
+  <!--web-fonts-->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
+  <!--web-fonts-->
+  <!--animation-effect-->
+  <link href="{%static 'css/animate.min.css'%}" rel="stylesheet">
+  <script src="{%static 'js/wow.min.js'%}"></script>
+  <script>
+   new WOW().init();
+  </script>
+  <!--//animation-effect-->
+  <!--start-smooth-scrolling-->
+  <script type="text/javascript" src="{%static 'js/move-top.js' %}"></script>
+  <script type="text/javascript" src="{%static 'js/easing.js'%}"></script>
+  <script type="text/javascript">
+  		jQuery(document).ready(function($) {
+  			$(".scroll").click(function(event){
+  				event.preventDefault();
+  				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+  			});
+  		});
+  </script>
+  <!--//end-smooth-scrolling-->
+</head>
+
+
+<body>
+
+  <div class="header">
+		<div class="top-header navbar navbar-default"><!--header-one-->
+			<div class="container">
+				<div class="nav navbar-nav wow fadeInLeft animated" data-wow-delay=".5s">
+					<h2>Welcome to CEC-myStore{% block user %} <a href="/user/signuppage">Register </a> Or <a href="/user/loginpage">Sign In </a></h2>{%endblock%}
+				</div>
+				<div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated" data-wow-delay=".5s">
+					<ul>
+
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="header-two navbar navbar-default"><!--header-two-->
+			<div class="container">
+				<div class="nav navbar-nav header-two-left">
+					<ul>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+91 8281144538</li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">store@ceconline.edu</a></li>
+					</ul>
+				</div>
+				<div class="nav navbar-nav logo wow zoomIn animated" data-wow-delay=".7s">
+					<h1><a href="index.html">CEC <b>mStore</b><span class="tag">one and only store for CEC </span> </a></h1>
+				</div>
+				<div class="nav navbar-nav navbar-right header-two-right">
+					<div class="header-right my-account">
+						<a href="contact.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> CONTACT US</a>
+					</div>
+					<div class="header-right cart">
+						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+						<h4><a href="checkout.html">
+								<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)
+						</a></h4>
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="top-nav navbar navbar-default"><!--header-three-->
+			<div class="container">
+				<nav class="navbar" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<!--navbar-header-->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav top-nav-info">
+							<li><a href="/dash">Home</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">category<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-column multi-column1">
+									<div class="row">
+										<div class="col-sm-4 menu-grids menulist1">
+											<h4>stationary</h4>
+											<ul class="multi-column-dropdown ">
+												<li><a class="list" href="products.html">Pen</a></li>
+												<li><a class="list" href="products.html">Paper</a></li>
+												<li><a class="list" href="products.html">Book</a></li>
+												<li><a class="list" href="products.html">drawing </a></li>
+												<li><a class="list" href="products.html">scientific</a></li>
+												<li><a class="list" href="products.html"></a></li>
+											</ul>
+											<ul class="multi-column-dropdown">
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html">g</a></li>
+												<li><h6><a class="list" href="products.html"></a></h6></li>
+											</ul>
+										</div>
+										<div class="col-sm-2 menu-grids">
+											<h4>electronics</h4>
+											<ul class="multi-column-dropdown">
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+											</ul>
+										</div>
+										<div class="col-sm-3 menu-grids">
+											<ul class="multi-column-dropdown">
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<h4>other services</h4>
+												<li><a class="list" href="products.html">)</a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+											</ul>
+										</div>
+										<div class="col-sm-3 menu-grids">
+											<ul class="multi-column-dropdown">
+												<li><h6><a class="list" href="products.html"></a></h6></li>
+												<h4>Text Books</h4>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+												<li><a class="list" href="products.html"></a></li>
+											</ul>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</ul>
+							</li>
+
+							<li><a href="/orders/history" class="fa fa-bar-chart-o fa-fw">Orders</a></li>
+              <li><a href="codes.html">blog</a></li>
+              <li><a href="/store">inventory</a></li>
+              <li><a href="/orders/new">new orders</a></li>
+              <li><a href="/bill">bill</a></li>
+						</ul>
+						<div class="clearfix"> </div>
+						<!--//navbar-collapse-->
+
+					</div>
+					<!--//navbar-header-->
+				</nav>
+				<div id="cd-search" class="cd-search">
+					<form>
+						<input type="search" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//header-->
+	<!--breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+				<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">{% block page %}About us{%endblock%}</li>
+			</ol>
+		</div>
+	</div>
+	<!--//breadcrumbs-->
+	<!--about-->
+
+
+  {% block nav %}
+  {% endblock %}
+
+  <script src="{% static 'js/main.js' %"></script>
+	<!--//search jQuery-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<!--//smooth-scrolling-of-move-up-->
+	<!--Bootstrap core JavaScript
+    ================================================== -->
+    <!--Placed at the end of the document so the pages load faster -->
+    <script src="{%static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

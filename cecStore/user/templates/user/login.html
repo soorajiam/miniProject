@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+
+<link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <!--Google Font - Work Sans-->
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+
+<div class="container">
+  <div class="profile">
+    <button class="profile__avatar" id="toggleProfile">
+     <img src="http://jaydeealkema.nl/images/person-flat.svg" alt="Avatar" />
+    </button>
+    <div class="profile__form">
+      <div class="profile__fields">
+        <form action="/user/login" method="post">
+  				 {%csrf_token%}
+        <div class="field">
+          <input type="text" id="fieldUser" class="input" name="username" required pattern=.*\S.* />
+          <label for="fieldUser" class="label">admission number</label>
+        </div>
+        <div class="field">
+          <input type="password" id="fieldPassword" class="input" name="password" required pattern=.*\S.* />
+          <label for="fieldPassword" class="label">Password</label>
+        </div>
+        <div class="profile__footer">
+           <button class="button raised blue">
+            <div class="center" fit>LOGIN</div>
+            <paper-ripple fit></paper-ripple>
+          </button>
+        </div>
+      </div>
+      <a href="/user/signuppage">
+      <div class="profile__footer">
+         <div class="button raised blue">
+
+          <div class="center"  fit>REGISTER</div>
+          <paper-ripple fit></paper-ripple>
+
+
+        </div>
+      </div>
+    </div>
+      </a>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="{% static 'user/js/index.js' %}"></script>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block tittle %}Cart{% endblock tittle %}
+{% block nav %}
+
+
+<div class="container">
+  <h2>Cart</h2>
+  <p>get your current purchase data</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>product</th>
+        <th>price of single unit</th>
+        <th>quantity</th>
+        <th>total</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {%for i in pl%}
+      <tr>
+          {%for j in product%}
+          {%if i.product_id == j%}
+        <td>{{j.pname}}</td>
+        <td>{{j.price}}</td>
+        <td>
+
+
+          <form action="/bill/c/{{i.tfield}}/change/" method="post">
+            {%csrf_token%}
+<input class="col-md-1" type="text" placeholder="{{i.quantity}}" name="quantity"  />
+
+<input type="submit" value="Submit">
+</form></td>
+<td>{{i.price}}</td>
+         {%endif%}
+         {%endfor%}
+      </tr>
+      {%endfor%}
+
+    </tbody>
+  </table>
+</div>
+
+
+<h3 class="col-md-9 col-md-offset-3">total: {{k.total}}</h3>
+<div class="col-md-3 col-md-offset-3">
+    <form accept-charset="UTF-8" action="/cart/purchase/{{k.purch_id}}/" method="POST">
+      {%csrf_token%}
+        <textarea class="form-control" id="text" name="remarks" placeholder="{{k.remarks}}" rows="5"></textarea>
+        <h6 class="pull-right" id="count_message"></h6>
+
+        <button class="btn btn-info col-md-3 col-md-offset-3 "<a href="" type="submit">order</button>
+    </form>
+</div>
+
+{% endblock nav %}

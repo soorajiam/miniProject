@@ -1,0 +1,68 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+
+
+  <!--Google Font - Work Sans-->
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+
+<div class="container">
+  <div class="profile">
+    <button class="profile__avatar" id="toggleProfile">
+     <img src="http://www.blog.noddle.co.uk/wp-content/uploads/2015/02/RegisterP.jpg" alt="Avatar" />
+    </button>
+    <div class="profile__form">
+      <div class="profile__fields">
+        <form action="/user/signup" method="post">
+  				 {%csrf_token%}
+        <div class="field">
+          <input type="text" id="fieldUser" name="name" value="{{name}}" class="input" required pattern=.*\S.* />
+          <label for="fieldUser" class="label">Name</label>
+        </div>
+        <div class="field">
+          <input type="text" id="fieldUser" name="email" value="{{adm_no}}" class="input" required pattern=.*\S.* />
+          <label for="fieldUser" class="label">admission number</label>
+        </div>
+        <div class="field">
+          <input type="text" id="fieldUser" name="phonenumber" value="{{phonenumber}}" class="input" required pattern=.*\S.* />
+          <label for="fieldUser" class="label">Phone number</label>
+        </div>
+        <div class="field">
+          <input type="text" id="fieldUser" name="cbid" value="{{cbid}}" class="input" required pattern=.*\S.* />
+          <label for="fieldUser" class="label">Class and division</label>
+        </div>
+        <div class="field">
+          <input type="password" id="fieldPassword" name="password" class="input" required pattern=.*\S.* />
+          <label for="fieldPassword" class="label">Password</label>
+        </div>
+      </div>
+        <div class="profile__footer">
+           <button class="button raised blue">
+            <div class="center" fit>REGISTER</div>
+            <paper-ripple fit></paper-ripple>
+
+          </div>
+        </button>
+
+      <div class="profile__footer">
+
+
+      <a href="/user/loginpage" class="centre" >
+         <div href="/user/loginpage" class="button raised blue">
+          <div class="center"  fit>LOGIN</div>
+          <paper-ripple fit></paper-ripple>
+          </div>
+        </div>
+
+    </a>
+     </div>
+  </div>
+</div>
+
+<div>
+  <h3>"{{signupmessage}}"</h3>
+</div>
+
+
+<script src="{% static 'user/js/index.js' %}"></script>

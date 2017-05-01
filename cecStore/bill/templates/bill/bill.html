@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block tittle %}bill{% endblock tittle %}
+{% block nav %}
+
+
+<div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".js-example-basic-single").select2();
+});
+</script>
+<br />
+<br /><br /><br /><br />
+">
+
+</div><br />
+<a class="btn btn-large btn-primary col-md-1" href="/bill/invoice">
+<i class=" icon-plus"></i> generate invoice</a><br />
+<div class="row">
+
+</div><div class="row">
+
+</div><div class="row">
+
+</div><br /><br />
+<form  action="/bill/bill1" method="post">
+
+{%csrf_token%}
+<select class="js-example-basic-single col-md-5  "name="prod">
+  {%for p in product%}
+  <option value="{{p.product_id}}">{{p.pname}}</option>
+  {%endfor%}
+
+<script>
+
+down vote
+accepted
+$('.input').keypress(function (e) {
+  if (e.which == 13) {
+    $('form#login').submit();
+    return false;    //<---- Add this line
+  }
+});
+</script>
+</select>
+<input type="submit" value="add to bill">
+</form>
+</div>
+
+<div class="panel-body">
+    <div class="col-lg-9 ">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+
+                    <tr>
+                      <th>product</th>
+                      <th>price of single unit</th>
+                      <th>quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {%for p in pr%}
+                  {%for i in l%}
+                  {%if i.purch_id == p%}
+                    <tr>
+                      {%for j in product%}
+                      {%if i.product_id == j%}
+                      <td>{{j.pname}}</td>
+                      <td>{{j.price}}</td>
+                      <td>
+
+
+                        <form action="/bill/c/{{i.tfield}}/change/" method="post">
+                          {%csrf_token%}
+     <input class="col-md-1" type="text" placeholder="{{i.quantity}}" name="quantity"  />
+
+    <input type="submit" value="Submit">
+  </form></td>
+                      {%endif%}
+                      {%endfor%}
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    {%endfor%}
+                </tbody>
+              </table>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock nav %}

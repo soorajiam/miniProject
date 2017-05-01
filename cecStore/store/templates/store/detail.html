@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% block tittle %}{{train.trname}}{% endblock tittle %}
+{% block nav %}
+
+<h2> <small> {{train.trname}}</small></h2>
+<ul>
+  <li>
+    {{product.trno}}
+  </li>
+
+</ul>
+<a href="/store/{{product.product_id}}/update" type="button" class="btn btn-default" role="button">update
+</a>
+<a href="/store/{{product.product_id}}/delete" type="button" class="btn btn-default" role="button">delete
+</a>
+
+
+</div>
+{% endblock  %}
